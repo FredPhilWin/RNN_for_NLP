@@ -17,7 +17,7 @@ data_dir_path = "/Users/fredericwinter/Desktop/Programmieren/Python/Pytorch/NLP/
 #Path to directory where parameters / state of the trained model will be saved
 save_dir_path = "/Users/fredericwinter/Desktop/Programmieren/Python/Pytorch/NLP/Predict_Country_by_Lastname/model_params/"
 #Name of the file in which the moel state will be saved after training
-save_name = "v5_SGD_clipped_gradients_no_Softmax_narrow_deep" + ".pt"
+save_name = "RNN_Last_Names_SGD_v1" + ".pt"
 
 
 inference_mode = False #skip training and load saved model state from load_state_path (specify below)
@@ -123,7 +123,7 @@ def training_step(string, label):
     optimizer.zero_grad()
 
     #gradient clipping
-    max_norm = 5
+    max_norm = 10
     nn.utils.clip_grad_norm_(rnn.parameters(), max_norm)
 
     loss.backward()
@@ -146,7 +146,7 @@ if inference_mode == False:
     train_losses = []
     val_losses = []
     max_epochs = 150
-    patience = 10
+    patience = 20
     early_stopping = True
 
     #helper variables for implementation of early stopping
