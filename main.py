@@ -17,7 +17,7 @@ data_dir_path = "/Users/fredericwinter/Desktop/Programmieren/Python/Pytorch/NLP/
 #Path to directory where parameters / state of the trained model will be saved
 save_dir_path = "/Users/fredericwinter/Desktop/Programmieren/Python/Pytorch/NLP/Predict_Country_by_Lastname/model_params/"
 #Name of the file in which the moel state will be saved after training
-save_name = "RNN_Last_Names_SGD_v1" + ".pt"
+save_name = "RNN_Last_Names_v1" + ".pt"
 
 
 inference_mode = False #skip training and load saved model state from load_state_path (specify below)
